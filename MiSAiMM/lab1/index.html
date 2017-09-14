@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab 1</title>
+	<script type="text/javascript" src="Chart.js"></script>
+	<script type="text/javascript" src="code.js"></script>
+</head>
+<body>
+	<div style="display: flex;">
+		<div style="width: 20%;">
+			<p>
+				a
+				<input type="number" id="a_input" value=3>
+			</p>
+			<p>
+				m
+				<input type="number" id="m_input" value=5>
+			</p>
+			<p>
+				R<sub>0</sub>
+				<input type="number" id="r0_input" value=1>
+			</p>
+			<p>
+				Count
+				<input type="number" id="count_input" value=100>
+			</p>
+			<button id="submit">Generate</button>
+		</div>
+		<div style="width: 20%;">
+			<p>
+				m = <span id="m_result"></span>
+			</p>
+			<p>
+				D = <span id="d_result"></span>
+			</p>
+			<p>
+				&sigma; = <span id="sigma_result"></span>
+			</p>
+		</div>
+	</div>
+
+	<canvas id="myChart" style="margin-top: 1em"></canvas>
+</body>
+</html>
