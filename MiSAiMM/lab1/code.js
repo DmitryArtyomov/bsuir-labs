@@ -111,9 +111,39 @@ function calcCharacteristics(genResult, testsCount) {
   let d = genResult.values.reduce(function(last, current) { return last + current * current - mSquared }) / (testsCount - 1);
   let sigma = Math.sqrt(d);
 
+  let pairsCountK = 0;
+  for (let i = 0; i < Math.floor(testsCount / 2); i++) {
+    let a = genResult.values[2 * i];
+    let b = genResult.values[2 * i + 1];
+    if (a * a + b * b < 1) {
+      pairsCountK++;
+    }
+  }
+
+  let periodLength = -1;
+  for (let i = 1; i < testsCount; i++) {
+    if (genResult.values[0] == genResult.values[i]) {
+      periodLength = i;
+      break;
+    }
+  }
+
+  let aperiodicLength = -1;
+  for (let i = 0; i < testsCount - periodLength; i++) {
+    if (genResult.values[i] == genResult.values[i + periodLength])
+    {
+      aperiodicLength = i + periodLength;
+      break;
+    }
+  }
+
   document.getElementById("m_result").textContent = m;
   document.getElementById("d_result").textContent = d;
   document.getElementById("sigma_result").textContent = sigma;
+  document.getElementById("2k_n_result").textContent = (2 * pairsCountK / testsCount) + ' | \u03C0/4 = ' + Math.PI / 4;
+  document.getElementById("period_result").textContent = (periodLength == -1 ? "not found" : periodLength);
+  document.getElementById("aperiodic_result").textContent = (aperiodicLength == -1 ? "not found" : aperiodicLength);
+  
 }
 
 window.onload = function() {
