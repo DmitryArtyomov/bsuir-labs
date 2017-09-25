@@ -1,4 +1,6 @@
 -- Variant 8
+USE AdventureWorks2012;
+GO
 
 SELECT BusinessEntityID, BirthDate, MaritalStatus, Gender, HireDate FROM HumanResources.Employee
 WHERE BirthDate < '19600101' AND MaritalStatus = 'S';
