@@ -9,7 +9,7 @@ function Generator(a, m, r0) {
     },
 
     generateArray: function(count) {
-      let min = 1, max = 0, result = [];
+      let min = Infinity, max = -Infinity, result = [];
       for (let i = 0; i < count; i++) {
         num = this.generate();
         if (num < min) { min = num }
@@ -115,7 +115,7 @@ function triangleDistribution(rng, count, firstNum, lastNum, type = 0) {
 }
 
 function simpsonDistribution(rng, count, firstNum, lastNum) {
-  let numbers = uniformDistribution(rng, count * 2, firstNum, lastNum).values;
+  let numbers = uniformDistribution(rng, count * 2, firstNum / 2, lastNum / 2).values;
   let min = Infinity, max = -Infinity, result = [];
   for (let i = 0; i < count * 2; i = i + 2) {
     let num = numbers[i] + numbers[i + 1];
@@ -192,11 +192,7 @@ function buildChart(intervalsData, testsCount) {
         backgroundColor: ColorGenerator(true).generateArray(20),
         borderColor: ColorGenerator(false).generateArray(20),
         borderWidth: 1
-      }, {
-          label: 'expected',
-          data: Array(20).fill(1/20),
-          type: 'line'
-        }]
+      }]
     },
     options: {
       scales: {
@@ -297,11 +293,13 @@ window.onload = function() {
     window.genFunction = function(rng, count) {
       let a  = parseFloat(document.getElementById("first_input").value);
       let b  = parseFloat(document.getElementById("last_input").value);
+      console.log(a);
+      console.log(b);
       if (!(a && b)) {
         alert("Please enter valid numbers");
         return;
       }
-      return simpsonDistribution(rng, count, 1, 5);
+      return simpsonDistribution(rng, count, a, b);
     }
   }
   document.getElementById("uniformRadio").click();

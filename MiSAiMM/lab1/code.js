@@ -9,7 +9,7 @@ function Generator(a, m, r0) {
     },
 
     generateArray: function(count) {
-      let min = 1, max = 0, result = [];
+      let min = Infinity, max = -Infinity, result = [];
       for (let i = 0; i < count; i++) {
         num = this.generate();
         if (num < min) { min = num }
