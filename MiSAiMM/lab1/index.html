@@ -2,54 +2,84 @@
 <html>
 <head>
 	<title>Lab 1</title>
-	<script type="text/javascript" src="Chart.js"></script>
+	<link rel="stylesheet" type="text/css" href="dependencies/bootstrap.min.css">
+	<script type="text/javascript" src="dependencies/bootstrap.min.js"></script>
+	<script type="text/javascript" src="dependencies/Chart.js"></script>
 	<script type="text/javascript" src="code.js"></script>
 </head>
 <body>
-	<div style="display: flex;">
-		<div style="width: 20%;">
-			<p>
-				a
-				<input type="number" id="a_input" value=3>
-			</p>
-			<p>
-				m
-				<input type="number" id="m_input" value=5>
-			</p>
-			<p>
-				R<sub>0</sub>
-				<input type="number" id="r0_input" value=1>
-			</p>
-			<p>
-				Count
-				<input type="number" id="count_input" value=1000000>
-			</p>
-			<button id="submit">Generate</button>
+	<div class="container">
+		<div class="row mt-3">
+			<div class="col-3">
+				<h6 class="text-center">Generator settings</h6>
+				<div class="form-group row">
+					<label for="a_input" class="col-2 col-form-label">a</label>
+					<div class="col-10">
+						<input class="form-control" type="number" id="a_input" value=3>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="m_input" class="col-2 col-form-label">m</label>
+					<div class="col-10">
+						<input class="form-control" type="number" id="m_input" value=5>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="r0_input" class="col-2 col-form-label">R<sub>0</sub></label>
+					<div class="col-10">
+						<input class="form-control" type="number" id="r0_input" value=1>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="count_input" class="col-2 col-form-label">Count</label>
+					<div class="col-10">
+						<input class="form-control" type="number" id="count_input" value=1000000>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-10 offset-2">
+						<button class="btn btn-primary" id="submit">Generate</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="row">
+					<div class="col-12">
+						<h6 class="text-center">Characteristics</h6>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-6">
+						<p>
+							m = <span id="m_result"></span>
+						</p>
+						<p>
+							D = <span id="d_result"></span>
+						</p>
+						<p>
+							&sigma; = <span id="sigma_result"></span>
+						</p>
+						<p>
+							2K/N = <span id="2k_n_result"></span>
+						</p>
+						<p>
+							&pi;/4 = <span id="pi_4"></span>
+						</p>
+					</div>
+					<div class="col-6">
+						<p>
+							P = <span id="period_result"></span>
+						</p>
+						<p>
+							L = <span id="aperiodic_result"></span>
+						</p>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div style="width: 20%;">
-			<p>
-				m = <span id="m_result"></span>
-			</p>
-			<p>
-				D = <span id="d_result"></span>
-			</p>
-			<p>
-				&sigma; = <span id="sigma_result"></span>
-			</p>
-			<p>
-				2K/N = <span id="2k_n_result"></span>
-			</p>
-		</div>
-		<div style="width: 20%;">
-			<p>
-				P = <span id="period_result"></span>
-			</p>
-			<p>
-				L = <span id="aperiodic_result"></span>
-			</p>
-		</div>
+
+		<canvas id="myChart" style="margin-top: 1em"></canvas>
 	</div>
 
-	<canvas id="myChart" style="margin-top: 1em"></canvas>
 </body>
 </html>

@@ -140,13 +140,13 @@ function calcCharacteristics(genResult, testsCount) {
   document.getElementById("m_result").textContent = m;
   document.getElementById("d_result").textContent = d;
   document.getElementById("sigma_result").textContent = sigma;
-  document.getElementById("2k_n_result").textContent = (2 * pairsCountK / testsCount) + ' | \u03C0/4 = ' + Math.PI / 4;
+  document.getElementById("2k_n_result").textContent = (2 * pairsCountK / testsCount);
   document.getElementById("period_result").textContent = (periodLength == -1 ? "not found" : periodLength);
   document.getElementById("aperiodic_result").textContent = (aperiodicLength == -1 ? "not found" : aperiodicLength);
-  
 }
 
 window.onload = function() {
+  document.getElementById("pi_4").textContent = Math.PI / 4;
   document.getElementById("submit").onclick = function() {
     let a  = parseFloat(document.getElementById("a_input").value);
     let m  = parseFloat(document.getElementById("m_input").value);
@@ -161,5 +161,5 @@ window.onload = function() {
     let intervalsData = buildIntervals(genResult);
     buildChart(intervalsData, count);
     calcCharacteristics(genResult, count);
-  }  
+  }
 }
