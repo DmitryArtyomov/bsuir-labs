@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab 2</title>
+	<link rel="stylesheet" type="text/css" href="dependencies/bootstrap.min.css">
+	<script type="text/javascript" src="dependencies/bootstrap.min.js"></script>
+	<script type="text/javascript" src="dependencies/Chart.js"></script>
+	<script type="text/javascript" src="code.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row mt-3">
+			<div class="col-3">
+				<h6 class="text-center">Generator settings</h6>
+				<div class="form-group row">
+					<label for="a_input" class="col-2 col-form-label">a</label>
+					<div class="col-10">
+						<input class="form-control" type="number" id="a_input" value=17000>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="m_input" class="col-2 col-form-label">m</label>
+					<div class="col-10">
+						<input class="form-control" type="number" id="m_input" value=160001>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="r0_input" class="col-2 col-form-label">R<sub>0</sub></label>
+					<div class="col-10">
+						<input class="form-control" type="number" id="r0_input" value=7>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="count_input" class="col-2 col-form-label">Count</label>
+					<div class="col-10">
+						<input class="form-control" type="number" id="count_input" value=320000>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-10 offset-2">
+						<button class="btn btn-primary" id="submit">Generate</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-3">
+				<h6 class="text-center">Distrubution type</h6>
+					<fieldset class="form-group row">
+						<div class="col-sm-10">
+							<div class="form-check">
+								<label class="form-check-label">
+									<input class="form-check-input" type="radio" name="distributionType" id="uniformRadio" value="uniform" checked>
+									Uniform distribution
+								</label>
+							</div>
+							<div class="form-check">
+								<label class="form-check-label">
+									<input class="form-check-input" type="radio" name="distributionType" id="gaussRadio" value="gauss">
+									Gauss distribution
+								</label>
+							</div>
+							<div class="form-check">
+								<label class="form-check-label">
+									<input class="form-check-input" type="radio" name="distributionType" id="expRadio" value="exponential">
+									Exponential distribution
+								</label>
+							</div>
+							<div class="form-check">
+								<label class="form-check-label">
+									<input class="form-check-input" type="radio" name="distributionType" id="gammaRadio" value="gamma">
+									Gamma distribution
+								</label>
+							</div>
+							<div class="form-check">
+								<label class="form-check-label">
+									<input class="form-check-input" type="radio" name="distributionType" id="triangleRadio" value="triangle">
+									Triangle distribution
+								</label>
+							</div>
+							<div class="form-check">
+								<label class="form-check-label">
+									<input class="form-check-input" type="radio" name="distributionType" id="simpsonRadio" value="simpson">
+									Simpson distribution
+								</label>
+							</div>
+						</div>
+					</fieldset>
+			</div>
+			<div class="col-3">
+				<h6 class="text-center">Distribution settings</h6>
+				<div class="form-group row" id="_1">
+					<label for="first_input" class="col-2 col-form-label">a</label>
+					<div class="col-10">
+						<input class="form-control" type="number" id="first_input" value=1>
+					</div>
+				</div>
+				<div class="form-group row" id="_2">
+					<label for="last_input" class="col-2 col-form-label">b</label>
+					<div class="col-10">
+						<input class="form-control" type="number" id="last_input" value=5>
+					</div>
+				</div>
+				<div class="form-group row" id="_3">
+					<label for="math_expect_input" class="col-2 col-form-label">m<sub>x</sub></label>
+					<div class="col-10">
+						<input class="form-control" type="number" id="math_expect_input" value=5>
+					</div>
+				</div>
+				<div class="form-group row" id="_4">
+					<label for="sqr_deviation_input" class="col-2 col-form-label">&sigma;<sub>x</sub></label>
+					<div class="col-10">
+						<input class="form-control" type="number" id="sqr_deviation_input" value=0.1>
+					</div>
+				</div>
+				<div class="form-group row" id="_5">
+					<label for="gauss_step_input" class="col-2 col-form-label">n</label>
+					<div class="col-10">
+						<input class="form-control" type="number" id="gauss_step_input" value=6>
+					</div>
+				</div>
+				<div class="form-group row" id="_6">
+					<label for="lambda_input" class="col-2 col-form-label">&lambda;</label>
+					<div class="col-10">
+						<input class="form-control" type="number" id="lambda_input" value=0.5>
+					</div>
+				</div>
+				<div class="form-group row" id="_7">
+					<label for="eta_input" class="col-2 col-form-label">&eta;</label>
+					<div class="col-10">
+						<input class="form-control" type="number" id="eta_input" value=2>
+					</div>
+				</div>
+				<div class="form-group row" id="_8">
+					<label for="triangle_type_input" class="col-2 col-form-label">Func</label>
+					<div class="col-10">
+						<select class="custom-select w-100" id="triangle_type_input">
+							<option value="0" selected>Max</option>
+							<option value="1">Min</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="col-3">
+				<h6>Characteristics</h6>
+				<p>
+					m = <span id="m_result"></span>
+				</p>
+				<p>
+					D = <span id="d_result"></span>
+				</p>
+				<p>
+					&sigma; = <span id="sigma_result"></span>
+				</p>
+			</div>
+		</div>
+
+		<canvas id="myChart" style="margin-top: 1em"></canvas>
+	</div>
+</body>
+</html>
