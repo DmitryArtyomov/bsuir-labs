@@ -1,5 +1,3 @@
--- Variant 8
-
 USE master;
 GO
 

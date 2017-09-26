@@ -16,6 +16,5 @@ SELECT d.Name, e.HireDate, e.SickLeaveHours, SUM(e.SickLeaveHours) OVER(PARTITIO
 INNER JOIN HumanResources.EmployeeDepartmentHistory edh ON e.BusinessEntityID = edh.BusinessEntityID
 INNER JOIN HumanResources.Department d ON edh.DepartmentID = d.DepartmentID
 WHERE edh.EndDate IS NULL
-GROUP BY d.Name, e.HireDate, e.SickLeaveHours
 ORDER BY d.name, e.HireDate;
 GO
