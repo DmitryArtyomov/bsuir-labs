@@ -1,0 +1,84 @@
+[Project]
+Current Flow=Multivendor
+VCS=0
+version=3
+Current Config=compile
+
+[Configurations]
+compile=Lab1
+
+[Library]
+Lab1=.\Lab1\Lab1.lib
+
+[Settings]
+AccessRead=0
+AccessReadWrite=0
+AccessACCB=0
+AccessACCR=0
+AccessReadWriteSLP=0
+AccessReadTopLevel=1
+DisableC=1
+ENABLE_ADV_DATAFLOW=0
+FLOW_TYPE=HDL
+LANGUAGE=VHDL
+REFRESH_FLOW=1
+FLOWTOOLS=ONLY_IMPL
+ON_SERVERFARM_SYNTH=0
+ON_SERVERFARM_IMPL=0
+ON_SERVERFARM_SIM=0
+DVM_DISPLAY=NO
+
+[LocalVerilogSets]
+EnableSLP=1
+EnableDebug=0
+
+[LocalVhdlSets]
+CompileWithDebug=0
+
+[$LibMap$]
+Lab1=.
+Active_lib=
+
+[IMPLEMENTATION]
+UCF=
+
+[Files.Data]
+.\src\1.vhd=VHDL Source Code
+.\src\1.asdb=Accelerated Waveform File
+.\src\1.awc=Accelerated Waveform Configuration
+.\src\2a.vhd=VHDL Source Code
+.\src\2a.asdb=Accelerated Waveform File
+.\src\2a.awc=Accelerated Waveform Configuration
+.\src\2b.vhd=VHDL Source Code
+.\src\2b.asdb=Accelerated Waveform File
+.\src\2b.awc=Accelerated Waveform Configuration
+.\src\2c.vhd=VHDL Source Code
+.\src\2d.vhd=VHDL Source Code
+.\src\2d.asdb=Accelerated Waveform File
+.\src\2d.awc=Accelerated Waveform Configuration
+.\src\2c.asdb=Accelerated Waveform File
+.\src\2c.awc=Accelerated Waveform Configuration
+
+[Files]
+/1.vhd=-1
+/1.asdb=-1
+/1.awc=-1
+/2a.vhd=-1
+/2a.asdb=-1
+/2a.awc=-1
+/2b.vhd=-1
+/2b.asdb=-1
+/2b.awc=-1
+/2c.vhd=-1
+/2c.asdb=-1
+/2c.awc=-1
+/2d.vhd=-1
+/2d.asdb=-1
+/2d.awc=-1
+
+[SpecTracer]
+WindowVisible=0
+[HierarchyViewer]
+HierarchyInformation=\2c\|\2c\|0 
+ShowHide=ShowTopLevel
+Selected=

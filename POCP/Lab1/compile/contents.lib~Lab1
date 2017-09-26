@@ -1,0 +1,11 @@
+18
+~E 1 "./../src/2b.vhd" 4 \2b\
+~A 1 "./../src/2b.vhd" 13 \2b\
+~E 1 "./../src/2c.vhd" 4 \2c\
+~A 1 "./../src/2c.vhd" 14 \2c\
+~E 1 "./../src/2d.vhd" 4 \2d\
+~A 1 "./../src/2d.vhd" 16 \2d\
+~E 1 "./../src/1.vhd" 4 mux
+~A 1 "./../src/1.vhd" 11 beh
+~E 1 "./../src/2a.vhd" 4 or4
+~A 1 "./../src/2a.vhd" 14 or4

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML>
+	<document type="stimulators" version="1">
+		<set name="ASDB Stimulators" active="1">
+			<stimulator>
+				<signal_path value="/\2d\/a"/>
+				<rawdescription value="CLK:FRM:Override:100.000000;2;1;0;50;1:Clock:1:"/>
+			</stimulator>
+			<stimulator>
+				<signal_path value="/\2d\/b"/>
+				<rawdescription value="CLK:FRM:Override:50.000000;2;1;0;50;1:Clock:1:"/>
+			</stimulator>
+			<stimulator>
+				<signal_path value="/\2d\/c"/>
+				<rawdescription value="CLK:FRM:Override:25.000000;2;1;0;50;1:Clock:1:"/>
+			</stimulator>
+			<stimulator>
+				<signal_path value="/\2d\/d"/>
+				<rawdescription value="CLK:FRM:Override:12500.000000;1;1;0;50;1:Clock:1:"/>
+			</stimulator>
+			<stimulator>
+				<signal_path value="/\2d\/s"/>
+				<rawdescription value="CLK:FRM:Override:6250.000000;1;1;0;50;1:Clock:0:"/>
+			</stimulator>
+		</set>
+	</document>
+</XML>

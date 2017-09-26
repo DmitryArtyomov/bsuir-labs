@@ -1,0 +1,1 @@
+-w -erf C:/Users/artyo/Documents/ActiveHDL/Labs/Lab1/compile/Lab1.erf -d C:/Users/artyo/Documents/ActiveHDL/Labs/Lab1/compile -s C:/Users/artyo/Documents/ActiveHDL/Labs/library.cfg -j C:/Users/artyo/Documents/ActiveHDL/Labs/Lab1/projlib.cfg -work Lab1 -O3 -e 100 -work Lab1 -2002 C:/Users/artyo/Documents/ActiveHDL/Labs/Lab1/src/1.vhd 
